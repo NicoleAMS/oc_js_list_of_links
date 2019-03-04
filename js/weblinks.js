@@ -64,7 +64,7 @@ function showForm() {
     formDiv.classList.remove("hidden");
 
     validateForm();
-    // submitForm();
+    submitForm();
 }
 
 
@@ -73,8 +73,59 @@ function validateForm() {
     url.addEventListener("change", function(e) {
         var splitURL = e.target.value.split("/");
         if (splitURL[0] !== "https:" && splitURL[0] !== "http:") {
-            console.log("https shall be added");
-            e.target.value = "https://" + e.target.value;
+            e.target.value = "http://" + e.target.value;
         }
     }); 
 }
+
+function submitForm() {
+    var form = document.getElementById("add-link-form");
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        addLink(e);
+    });
+}
+
+function addLink(data) {
+    var link = {
+        title: data.target.title.value,
+        author: data.target.author.value,
+        url: data.target.url.value
+    }
+    var linkElement = createLinkElement(link);
+    content.prepend(linkElement);
+    showMessage(link);
+}
+
+function showMessage(linkEl) {
+    var messageDiv = document.getElementById("message");
+    messageDiv.classList.remove("hidden");
+    var message = document.createElement("p");
+    message.id = "alert";
+    message.innerHTML="The link to '" + linkEl.title + "' was successfully added";
+    messageDiv.appendChild(message); 
+
+    // HIDE MESSAGE
+    setTimeout(function(){ 
+        messageDiv.classList.add("hidden");
+        messageDiv.removeChild(message);
+    }, 2000);
+
+    resetForm();
+}
+
+function resetForm() {
+    // RESET FORM
+    var form = document.getElementById("add-link-form");
+    form.reset();
+
+    // HIDE FORM
+    var formDiv = document.getElementById("form-div");
+    formDiv.classList.add("hidden");
+
+    // SHOW BUTTON
+    var addBtn = document.getElementById("add-btn");
+    addBtn.classList.remove("hidden");
+}
+
