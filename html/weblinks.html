@@ -9,7 +9,16 @@
 
 <body>
     <h1>Activity</h1>
-
+    <div id="message" class="hidden"></div>
+    <button type="button" id="add-btn" onClick="showForm()">Add link</button>
+    <div id="form-div" class="hidden">
+        <form action="" id="add-link-form">
+            <input type="text" name="author" id="author" placeholder="Your name">
+            <input type="text" name="title" id="title" placeholder="Link title">
+            <input type="url" name="url" id="url" placeholder="Link URL">
+            <input type="submit" value="Add">
+        </form>
+    </div>
     <!-- New elements are added in this tag -->
     <div id="content">
     </div>

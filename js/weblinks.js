@@ -44,7 +44,6 @@ function createLinkElement(link) {
     linkDiv.classList.add("link");
     linkDiv.appendChild(titleLine);
     linkDiv.appendChild(detailsLine);
-
     return linkDiv;
 }
 
@@ -53,3 +52,16 @@ linkList.forEach(function (link) {
     var linkElement = createLinkElement(link);
     content.appendChild(linkElement);
 });
+
+
+function showForm() {
+    // HIDE BUTTON
+    var addBtn = document.getElementById("add-btn");
+    addBtn.classList.add("hidden");
+
+    // SHOW FORM
+    var formDiv = document.getElementById("form-div");
+    formDiv.classList.remove("hidden");
+
+    // submitForm();
+}

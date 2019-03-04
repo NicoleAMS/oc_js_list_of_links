@@ -15,3 +15,27 @@ span {
     padding: 10px;
     margin-bottom: 10px;
 }
+
+#add-btn {
+    margin-bottom: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+form input {
+    margin-right: 10px;
+}
+
+#alert {
+    background-color: #d9edf7;
+    padding: 15px 10px;
+    border-radius: 10px;
+    border: 1px solid #bce8f1;
+    color: #31708f;
+}
