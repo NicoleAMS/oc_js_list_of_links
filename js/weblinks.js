@@ -63,5 +63,18 @@ function showForm() {
     var formDiv = document.getElementById("form-div");
     formDiv.classList.remove("hidden");
 
+    validateForm();
     // submitForm();
+}
+
+
+function validateForm() {
+    var url = document.getElementById("url");
+    url.addEventListener("change", function(e) {
+        var splitURL = e.target.value.split("/");
+        if (splitURL[0] !== "https:" && splitURL[0] !== "http:") {
+            console.log("https shall be added");
+            e.target.value = "https://" + e.target.value;
+        }
+    }); 
 }
