@@ -71,8 +71,8 @@ function showForm() {
 function validateForm() {
     var url = document.getElementById("url");
     url.addEventListener("change", function(e) {
-        var splitURL = e.target.value.split("/");
-        if (splitURL[0] !== "https:" && splitURL[0] !== "http:") {
+        var splitUrl = e.target.value.split("/");
+        if (splitUrl[0] !== "https:" && splitUrl[0] !== "http:") {
             e.target.value = "http://" + e.target.value;
         }
     }); 
