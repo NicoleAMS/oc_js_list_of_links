@@ -1,7 +1,7 @@
 # oc_js_list_of_links
 This project creates a link listing page with JavaScript. This is the final exercise of Open Classroom's "Use JavaScript in your web projects" course.
 
-###The instructions were as follows:
+## The instructions were as follows:
 
 You're going to take an existing project -- a list of links, displayed one by one with JavaScript -- and add new functionality that lets users add their own links to the list.
  
